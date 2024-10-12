@@ -22,6 +22,7 @@ import PersonAddIcon from '@/material-icons/400-24px/person_add.svg?react';
 import PublicIcon from '@/material-icons/400-24px/public.svg?react';
 import SettingsIcon from '@/material-icons/400-24px/settings-fill.svg?react';
 import StarIcon from '@/material-icons/400-24px/star.svg?react';
+import WikiIcon from '@/material-icons/400-24px/edit_note-fill.svg?react';
 import { fetchFollowRequests } from 'mastodon/actions/accounts';
 import Column from 'mastodon/components/column';
 import ColumnHeader from 'mastodon/components/column_header';
@@ -107,6 +108,11 @@ class GettingStarted extends ImmutablePureComponent {
     const { signedIn, permissions } = this.props.identity;
 
     const navItems = [];
+
+    navItems.push(
+      <ColumnSubheading key='header-owocafe' text="owo.cafe" />,
+      <ColumnLink key='wiki' icon='wiki' iconComponent={WikiIcon} text='Wiki' href='https://wiki.owo.cafe' target='_blank' />,
+    );
 
     navItems.push(
       <ColumnSubheading key='header-discover' text={intl.formatMessage(messages.discover)} />,
