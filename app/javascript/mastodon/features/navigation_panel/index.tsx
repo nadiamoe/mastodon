@@ -29,6 +29,7 @@ import SettingsIcon from '@/material-icons/400-24px/settings.svg?react';
 import StarActiveIcon from '@/material-icons/400-24px/star-fill.svg?react';
 import StarIcon from '@/material-icons/400-24px/star.svg?react';
 import TrendingUpIcon from '@/material-icons/400-24px/trending_up.svg?react';
+import WikiIcon from '@/material-icons/400-24px/edit_note-fill.svg?react';
 import { fetchFollowRequests } from 'mastodon/actions/accounts';
 import { openNavigation, closeNavigation } from 'mastodon/actions/navigation';
 import { Account } from 'mastodon/components/account';
@@ -258,6 +259,17 @@ export const NavigationPanel: React.FC<{ multiColumn?: boolean }> = ({
       {banner && <div className='navigation-panel__banner'>{banner}</div>}
 
       <ul className='navigation-panel__menu'>
+        <li>
+          <ColumnLink
+            href='https://wiki.owo.cafe'
+            target='_blank'
+            icon='wiki'
+            iconComponent={WikiIcon}
+            activeIconComponent={WikiIcon}
+            text='Wiki'
+          />
+        </li>
+
         {signedIn && (
           <>
             {!multiColumn && (
