@@ -17,11 +17,12 @@ const selector = createSelector(
     needsLockWarning: privacy === 'private' && !locked,
     hashtagWarning: privacy !== 'public' && HASHTAG_PATTERN_REGEX.test(text),
     directMessageWarning: privacy === 'direct',
+    owocafePublicWarning: privacy === 'public' && text !== "",
   }),
 );
 
 export const Warning = () => {
-  const { needsLockWarning, hashtagWarning, directMessageWarning } =
+  const { needsLockWarning, hashtagWarning, directMessageWarning, owocafePublicWarning } =
     useAppSelector(selector);
   if (needsLockWarning) {
     return (
@@ -72,6 +73,20 @@ export const Warning = () => {
             defaultMessage='Learn more'
           />
         </a>
+      </WarningMessage>
+    );
+  }
+
+  if (owocafePublicWarning) {
+    return (
+      <WarningMessage>
+        <FormattedMessage
+          id='compose_form.owocafe_public_warning'
+          defaultMessage="Este post se mostrará a todos los usuarios de owo.cafe. Tenemos {rules} respecto a la temática y tono de los con visibilidad 🌍 Pública."
+          values={{
+            rules: <a href="https://wiki.owo.cafe/owocafe/timeline-publica" target="_blank">normas específicas</a>
+          }}
+        />
       </WarningMessage>
     );
   }
