@@ -1,0 +1,10 @@
+// Espresso: warm coffee dark theme.
+
+// application first so our overrides land after the defaults in the cascade.
+@use 'application';
+@use 'espresso/tokens';
+@use 'espresso/diff';
+
+// owocafe overlay partials aren't in this tree yet.
+// @use 'owocafe/zoom-emojis';
+// @use 'owocafe/no-alt';

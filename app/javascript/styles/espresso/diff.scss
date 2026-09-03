@@ -1,0 +1,37 @@
+// Element tweaks the token overrides don't cover.
+
+// Borderless dropdowns.
+.dropdown-menu {
+  border: none;
+}
+
+// Lighter background for the leftmost drawer.
+.drawer__inner,
+.drawer__inner__mastodon,
+.drawer__header {
+  background-color: var(--color-bg-tertiary) !important;
+}
+
+// No box behind avatars.
+.account__avatar {
+  background-color: transparent !important;
+}
+
+// Brighter than the cream body text.
+.compose-form .autosuggest-textarea__textarea {
+  color: #fff !important;
+}
+
+// Settings UI: lighter surface for the wrapper and selected item.
+// TODO: re-verify selectors, admin markup drifts between releases.
+div.admin-wrapper {
+  background-color: var(--color-bg-secondary);
+}
+
+.sidebar ul li a.selected {
+  background-color: var(--color-bg-secondary);
+}
+
+.simple_form select {
+  background-color: var(--color-bg-primary) !important;
+}
