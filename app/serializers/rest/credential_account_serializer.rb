@@ -2,6 +2,7 @@
 
 class REST::CredentialAccountSerializer < REST::AccountSerializer
   attributes :source
+  attribute(:fake_email) { object.local_username_and_domain }
 
   has_one :role, serializer: REST::RoleSerializer
 
